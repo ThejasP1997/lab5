@@ -167,7 +167,7 @@ exit(1);
 
 }
 
-binding the socket and server address
+
 
 if(listen(sockfd, BACKLOG) == -1)
 
@@ -200,16 +200,7 @@ printf("File requested is %s\n", buf1);
 if((fp=open(buf1,O_RDONLY))<0)
 
 {
-trying to open file in read mode
 
-
-
-
-
-
-Department of CSE, Dr.AIT
-Page 41
-Network Lab Manual
 
 
 printf("File not found\n");

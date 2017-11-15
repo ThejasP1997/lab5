@@ -26,7 +26,7 @@ $ftp1 attach-agent $tcp1
 set null1 [new Agent/Null]
 $ns attach-agent $n1 $null1
 
-set udp2 [new Agent/TCP]
+set udp2 [new Agent/UDP]
 $ns attach-agent $n2 $udp2
 set cbr2 [new Application/Traffic/CBR]
 $cbr2 attach-agent $udp2
@@ -62,8 +62,8 @@ close $nf
 exit 0
 }
 
-$ns at 0.1 "$tcp0 start"
-$ns at 0.5 "$tcp1 start"
-$ns at 1.0 "$udp2 start"
+$ns at 0.1 "$ftp0 start"
+$ns at 0.5 "$ftp1 start"
+$ns at 1.0 "$cbr2 start"
 $ns at 4.0 "finish"
 $ns run
